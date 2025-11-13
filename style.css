@@ -353,3 +353,27 @@ a {
   color: var(--text-muted);
   text-align: left;
 }
+
+/* Banner background behind hero */
+.hero-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(164, 203, 225, 0.35),
+    rgba(0, 14, 47, 0.08)
+  );
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 14, 47, 0.08);
+}
+
+/* Larger headshot */
+.large-headshot {
+  width: 240px;
+  height: 240px;
+}
+
+.large-headshot img {
+  border-radius: 20px;
+  object-fit: cover;
+}
+

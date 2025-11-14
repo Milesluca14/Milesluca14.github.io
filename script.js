@@ -27,7 +27,7 @@ if (themeToggle) {
   });
 }
 
-// Simple gallery preview toggle (no animation)
+// Simple gallery preview toggle on home page
 const galleryToggle = document.getElementById("gallery-toggle");
 const galleryPreview = document.getElementById("gallery-preview");
 

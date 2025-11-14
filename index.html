@@ -5,8 +5,8 @@
   <title>Miles Lucatorto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicon: make sure ml-logo.png is in the same folder -->
-  <link rel="icon" type="New_ML.png" href="New_ML.png" />
+  <!-- Favicon: make sure New_ML.png is in the same folder -->
+  <link rel="icon" type="image/png" href="New_ML.png" />
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -30,7 +30,7 @@
           <!-- REPLACE: hero intro paragraph -->
           <p class="hero-intro">
             I’m a Mechanical Engineering student at the University of Connecticut who’s motivated by solving problems and making ideas work in the real world. I enjoy bringing technical and creative thinking together, whether I’m designing parts in CAD, machining components, or testing systems to improve performance.
-           </p>
+          </p>
 
           <!-- REPLACE: education line if you want -->
           <p class="hero-education-line">
@@ -67,14 +67,27 @@
 
         <div>
           <h3>Contact me</h3>
-          <!-- REPLACE: contact values -->
+          <!-- REPLACE: quick contact summary -->
           <p>Email: Miles.lucatorto@gmail.com</p>
-          <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/miles-lucatorto" target="_blank" rel="noreferrer">
-              linkedin.com/in/miles-lucatorto
-            </a>
-          </p>
+
+          <!-- LinkedIn window/card -->
+          <div class="contact-card linkedin-card">
+            <div class="linkedin-icon-box">
+              <span class="linkedin-icon-text">in</span>
+            </div>
+            <div class="linkedin-text-block">
+              <p class="linkedin-label">LinkedIn</p>
+              <p class="linkedin-handle">/in/miles-lucatorto</p>
+              <a
+                href="https://www.linkedin.com/in/miles-lucatorto"
+                target="_blank"
+                rel="noreferrer"
+                class="btn linkedin-btn"
+              >
+                View LinkedIn profile
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -261,12 +274,25 @@
       <div class="section-inner">
         <h2>Contact me</h2>
         <p>Email: Miles.lucatorto@gmail.com</p>
-        <p>
-          LinkedIn:
-          <a href="https://www.linkedin.com/in/miles-lucatorto" target="_blank" rel="noreferrer">
-            linkedin.com/in/miles-lucatorto
-          </a>
-        </p>
+
+        <!-- Second LinkedIn window in bottom contact section (can remove if you only want one) -->
+        <div class="contact-card linkedin-card">
+          <div class="linkedin-icon-box">
+            <span class="linkedin-icon-text">in</span>
+          </div>
+          <div class="linkedin-text-block">
+            <p class="linkedin-label">LinkedIn</p>
+            <p class="linkedin-handle">/in/miles-lucatorto</p>
+            <a
+              href="https://www.linkedin.com/in/miles-lucatorto"
+              target="_blank"
+              rel="noreferrer"
+              class="btn linkedin-btn"
+            >
+              View LinkedIn profile
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <!-- END CONTACT -->

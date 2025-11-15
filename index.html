@@ -5,13 +5,13 @@
   <title>Miles Lucatorto</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicon: make sure New_ML.png is in the same folder -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="New_ML.png" />
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- LinkedIn badge script (from LinkedIn) -->
+  <!-- LinkedIn badge script -->
   <script
     src="https://platform.linkedin.com/badges/js/profile.js"
     async
@@ -24,7 +24,7 @@
 <body id="top">
   <div class="page-wrapper">
 
-    <!-- HERO -->
+    <!-- HERO (full width) -->
     <header class="hero">
       <div class="hero-inner">
         <div class="hero-text">
@@ -57,34 +57,22 @@
       </div>
     </header>
 
-    <!-- ABOUT + LARGE IMAGE -->
+    <!-- ABOUT (full width) -->
     <section class="section section-after-hero">
-      <div class="section-inner two-column">
-        <div>
-          <h2>About</h2>
-          <p>
-            I am a Mechanical Engineering student at the University of Connecticut interested in design, manufacturing, and hands-on engineering. I like work that balances analysis with real builds, where the design has to fit, function, and be maintainable. I care about clear communication, clean CAD, and projects that teach something new every time.
-          </p>
-        </div>
-
-        <div>
-          <h2>In the shop</h2>
-          <div class="profile-photo-frame">
-            <!-- REPLACE: a larger working/ shop photo -->
-            <img src="PROFILE_SECTION_IMAGE_FILE" alt="Miles working on a project" />
-          </div>
-          <!-- Optional caption – change or delete -->
-          <p class="profile-photo-caption">
-            SHORT_CAPTION_PLACEHOLDER
-          </p>
-        </div>
+      <div class="section-inner">
+        <h2>About me</h2>
+        <p>
+          I am a Mechanical Engineering student at the University of Connecticut interested in design, manufacturing, and hands-on engineering. I like work that balances analysis with real builds, where the design has to fit, function, and be maintainable. I care about clear communication, clean CAD, and projects that teach something new every time.
+        </p>
       </div>
     </section>
 
-    <!-- SKILLS + INVOLVEMENT -->
+    <!-- MAIN GRID: Skills / In the shop / Education / Contact / Involvement -->
     <section class="section">
-      <div class="section-inner two-column">
-        <div>
+      <div class="layout-grid">
+
+        <!-- Skills (top-left) -->
+        <section class="block-card skills-block">
           <h2>Skills</h2>
           <ul>
             <li>CAD: SolidWorks</li>
@@ -100,58 +88,22 @@
             <li>Team collaboration on technical projects</li>
             <li>Leadership through Scouting</li>
           </ul>
-        </div>
+        </section>
 
-        <div>
-          <h2>Involvement</h2>
-
-          <div class="mini-panel">
-            <h3>
-              Formula SAE
-              <span class="involvement-dates">2025 – Present</span>
-            </h3>
-            <p>
-              Work on the design and development of a student-built race car, contributing to CAD, packaging, and subsystem collaboration.
-            </p>
-            <p class="mini-panel-link">
-              <a href="sae.html">See more about Formula SAE →</a>
-            </p>
+        <!-- In the shop (top-right image) -->
+        <section class="block-card inshop-block">
+          <h2>In the shop</h2>
+          <div class="profile-photo-frame">
+            <!-- REPLACE: your larger working photo -->
+            <img src="PROFILE_SECTION_IMAGE_FILE" alt="Miles working on a project" />
           </div>
+          <p class="profile-photo-caption">
+            SHORT_CAPTION_PLACEHOLDER
+          </p>
+        </section>
 
-          <div class="mini-panel">
-            <h3>
-              Boy Scouts of America
-              <span class="involvement-dates">2018 – Present</span>
-            </h3>
-            <p>
-              Senior Patrol Leader and Eagle Scout candidate in Troop 4, Floral Park, NY, responsible for planning, training, and leading scouts.
-            </p>
-            <p class="mini-panel-link">
-              <a href="scouting.html">See more about Boy Scouts of America →</a>
-            </p>
-          </div>
-
-          <div class="mini-panel">
-            <h3>
-              Robotics
-              <span class="involvement-dates">2022 – 2025</span>
-            </h3>
-            <p>
-              Experience with 4017 RoboPandas, contributing to fabrication, assembly, testing, and event support at competitions.
-            </p>
-            <p class="mini-panel-link">
-              <a href="robotics.html">See more about Robotics →</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION + CONTACT / LINKEDIN -->
-    <section class="section">
-      <div class="section-inner two-column">
-        <!-- Education -->
-        <div>
+        <!-- Education (middle-left) -->
+        <section class="block-card education-block">
           <h2>Education</h2>
 
           <div class="school-entry">
@@ -183,17 +135,17 @@
               <p class="school-details">Architectural Studies Program · 2022 – 2025</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- Contact + LinkedIn badge -->
-        <div>
+        <!-- Contact (bottom-left) -->
+        <section class="block-card contact-block">
           <h2>Contact</h2>
           <p>Email: Miles.lucatorto@gmail.com</p>
 
           <div class="linkedin-badge-wrapper">
             <p class="linkedin-badge-title">LinkedIn</p>
 
-            <!-- Light mode badge -->
+            <!-- Light badge -->
             <div class="linkedin-badge linkedin-badge-light">
               <div
                 class="badge-base LI-profile-badge"
@@ -211,7 +163,7 @@
               </div>
             </div>
 
-            <!-- Dark mode badge -->
+            <!-- Dark badge -->
             <div class="linkedin-badge linkedin-badge-dark">
               <div
                 class="badge-base LI-profile-badge"
@@ -229,11 +181,55 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- Involvement (right column, spanning middle + bottom) -->
+        <section class="block-card involvement-block">
+          <h2>Involvement</h2>
+
+          <article class="mini-panel">
+            <h3>
+              Formula SAE
+              <span class="involvement-dates">2025 – Present</span>
+            </h3>
+            <p>
+              Work on the design and development of a student-built race car, contributing to CAD, packaging, and subsystem collaboration.
+            </p>
+            <p class="mini-panel-link">
+              <a href="sae.html">See more about Formula SAE →</a>
+            </p>
+          </article>
+
+          <article class="mini-panel">
+            <h3>
+              Boy Scouts of America
+              <span class="involvement-dates">2018 – Present</span>
+            </h3>
+            <p>
+              Senior Patrol Leader and Eagle Scout candidate in Troop 4, Floral Park, NY, responsible for planning, training, and leading scouts.
+            </p>
+            <p class="mini-panel-link">
+              <a href="scouting.html">See more about Boy Scouts of America →</a>
+            </p>
+          </article>
+
+          <article class="mini-panel">
+            <h3>
+              Robotics
+              <span class="involvement-dates">2022 – 2025</span>
+            </h3>
+            <p>
+              Experience with 4017 RoboPandas, contributing to fabrication, assembly, testing, and event support at competitions.
+            </p>
+            <p class="mini-panel-link">
+              <a href="robotics.html">See more about Robotics →</a>
+            </p>
+          </article>
+        </section>
       </div>
     </section>
 
-    <!-- GALLERY PREVIEW -->
+    <!-- GALLERY (full width at bottom) -->
     <section class="section">
       <div class="section-inner">
         <div class="gallery-header-row">

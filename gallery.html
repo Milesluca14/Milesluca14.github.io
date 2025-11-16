@@ -1,58 +1,96 @@
-<section class="section">
-  <div class="section-inner">
-    <h1>Gallery</h1>
-    <p class="gallery-intro-text">
-      A selection of builds, projects, and moments from Scouting, robotics, and mechanical work.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery · Miles Lucatorto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <div class="gallery-mosaic">
-      <!-- Row 1 -->
-      <figure class="gallery-tile">
-        <img src="gallery1.jpg" alt="Gallery image 1" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery2.jpg" alt="Gallery image 2" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery3.jpg" alt="Gallery image 3" />
-      </figure>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="New_ML.png" />
 
-      <!-- Row 2 -->
-      <figure class="gallery-tile">
-        <img src="gallery4.jpg" alt="Gallery image 4" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery5.jpg" alt="Gallery image 5" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery6.jpg" alt="Gallery image 6" />
-      </figure>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
-      <!-- Row 3 -->
-      <figure class="gallery-tile">
-        <img src="gallery7.jpg" alt="Gallery image 7" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery8.jpg" alt="Gallery image 8" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery9.jpg" alt="Gallery image 9" />
-      </figure>
+  <!-- Same stylesheet as index -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+  <div class="page-wrapper narrow-page">
+    <section class="section">
+      <div class="section-inner">
+        <h1>Gallery</h1>
+        <p class="gallery-intro-text">
+          A selection of builds, projects, and moments from Scouting, robotics, and mechanical work.
+        </p>
 
-      <!-- Row 4 -->
-      <figure class="gallery-tile">
-        <img src="gallery10.jpg" alt="Gallery image 10" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery11.jpg" alt="Gallery image 11" />
-      </figure>
-      <figure class="gallery-tile">
-        <img src="gallery12.jpg" alt="Gallery image 12" />
-      </figure>
-    </div>
+        <!-- 4 rows x 3 columns, tight mosaic -->
+        <div class="gallery-mosaic">
+          <!-- Row 1 -->
+          <figure class="gallery-tile">
+            <img src="gallery1.jpg" alt="Gallery image 1" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery2.jpg" alt="Gallery image 2" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery3.jpg" alt="Gallery image 3" />
+          </figure>
 
-    <p class="back-link">
-      <a href="index.html">← Back to home</a>
-    </p>
+          <!-- Row 2 -->
+          <figure class="gallery-tile">
+            <img src="gallery4.jpg" alt="Gallery image 4" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery5.jpg" alt="Gallery image 5" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery6.jpg" alt="Gallery image 6" />
+          </figure>
+
+          <!-- Row 3 -->
+          <figure class="gallery-tile">
+            <img src="gallery7.jpg" alt="Gallery image 7" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery8.jpg" alt="Gallery image 8" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery9.jpg" alt="Gallery image 9" />
+          </figure>
+
+          <!-- Row 4 -->
+          <figure class="gallery-tile">
+            <img src="gallery10.jpg" alt="Gallery image 10" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery11.jpg" alt="Gallery image 11" />
+          </figure>
+          <figure class="gallery-tile">
+            <img src="gallery12.jpg" alt="Gallery image 12" />
+          </figure>
+        </div>
+
+        <p class="back-link">
+          <a href="index.html">← Back to home</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>© 2025 Miles Lucatorto · Made by Miles Lucatorto</p>
+    </footer>
   </div>
-</section>
+
+  <!-- Bottom nav (same as other pages) -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-item">Home</a>
+    <a href="projects.html" class="bottom-nav-item">Projects</a>
+    <a href="gallery.html" class="bottom-nav-item">Gallery</a>
+    <a href="resume.html" class="bottom-nav-item">Resume</a>
+    <button id="theme-toggle" class="bottom-nav-item" type="button">Dark/Light</button>
+    <a href="#top" class="bottom-nav-item">Top</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

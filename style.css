@@ -102,6 +102,15 @@ body.dark-mode a {
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
   margin-top: 1.8rem; /* spacing below hero */
 }
+/* Hover to match other cards */
+.section-after-hero .section-inner:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
 
 /* Headings */
 h1,
@@ -688,12 +697,11 @@ body.dark-mode .linkedin-badge-dark {
   color: var(--text-muted);
 }
 
-/* Bottom floating nav */
 .bottom-nav {
   position: fixed;
   left: 50%;
   bottom: 0;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   border-top: 1px solid var(--border-subtle);
@@ -707,10 +715,22 @@ body.dark-mode .linkedin-badge-dark {
   box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.18);
   z-index: 20;
 
-  /* NEW — float-motion */
+  /* animated floating */
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* When scrolling down, the bar dips slightly */
+body.scrolling-down .bottom-nav {
+  transform: translateX(-50%) translateY(14px);
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* When scrolling up, it rises into view */
+body.scrolling-up .bottom-nav {
+  transform: translateX(-50%) translateY(0);
+}
+
 
 body.scrolling-down .bottom-nav {
   transform: translateX(-50%) translateY(14px);

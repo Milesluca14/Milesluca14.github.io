@@ -88,3 +88,18 @@ if (galleryToggle && galleryPreview) {
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 })();
+
+// Floating bottom nav behavior
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+  if (current > lastScroll) {
+    document.body.classList.add("scrolling-down");
+    document.body.classList.remove("scrolling-up");
+  } else {
+    document.body.classList.add("scrolling-up");
+    document.body.classList.remove("scrolling-down");
+  }
+  lastScroll = current;
+});

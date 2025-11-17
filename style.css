@@ -289,26 +289,19 @@ body.dark-mode .hero-photo-frame {
   white-space: nowrap;
 }
 
-.btn.primary {
+.btn.primary,
+.btn.secondary {
   background: linear-gradient(135deg, var(--uconn-blue-light), var(--uconn-navy));
   color: #ffffff;
+  border: none;
   box-shadow: 0 10px 22px rgba(0, 17, 47, 0.35);
 }
 
-.btn.primary:hover {
+.btn.primary:hover,
+.btn.secondary:hover {
   transform: translateY(-1px) scale(1.02);
   box-shadow: 0 14px 30px rgba(0, 17, 47, 0.45);
-  background: linear-gradient(
-    135deg,
-    var(--uconn-navy),
-    var(--uconn-blue-light)
-  );
-}
-
-.btn.secondary {
-  background: var(--panel-bg);
-  border-color: var(--border-subtle);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, var(--uconn-navy), var(--uconn-blue-light));
 }
 
 .btn.secondary:hover,

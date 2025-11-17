@@ -103,3 +103,20 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = current;
 });
+
+// Floating bottom nav scroll detection
+let lastScrollY = window.pageYOffset;
+
+window.addEventListener("scroll", () => {
+  const currentY = window.pageYOffset;
+
+  if (currentY > lastScrollY) {
+    document.body.classList.add("scrolling-down");
+    document.body.classList.remove("scrolling-up");
+  } else {
+    document.body.classList.add("scrolling-up");
+    document.body.classList.remove("scrolling-down");
+  }
+
+  lastScrollY = currentY;
+});

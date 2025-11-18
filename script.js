@@ -1,14 +1,19 @@
+// ======================================
+// Master initializer
+// ======================================
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
+  initGalleryToggle();
   initScrollReveal();
   initBottomNavScrollBehavior();
   setupMetricCounters();
   initBackToTop();
 });
 
-/* ======================================
-   DARK / LIGHT MODE
-====================================== */
+
+// ======================================
+// Dark / Light mode toggle
+// ======================================
 function initThemeToggle() {
   const themeToggle = document.getElementById("theme-toggle");
   if (!themeToggle) return;
@@ -17,8 +22,8 @@ function initThemeToggle() {
     document.body.classList.toggle("dark-mode", mode === "dark");
   }
 
-  const saved = localStorage.getItem("theme");
-  applyTheme(saved === "dark" ? "dark" : "light");
+  const savedTheme = localStorage.getItem("theme");
+  applyTheme(savedTheme === "dark" ? "dark" : "light");
 
   themeToggle.addEventListener("click", () => {
     const isDark = document.body.classList.contains("dark-mode");
@@ -28,107 +33,148 @@ function initThemeToggle() {
   });
 }
 
-/* ======================================
-   SCROLL REVEAL
-====================================== */
+
+// ======================================
+// Gallery toggle
+// ======================================
+function initGalleryToggle() {
+  const galleryToggle = document.getElementById("gallery-toggle");
+  const galleryPreview = document.getElementById("gallery-preview");
+
+  if (!galleryToggle || !galleryPreview) return;
+
+  let open = false;
+
+  galleryToggle.addEventListener("click", () => {
+    open = !open;
+    galleryPreview.style.display = open ? "block" : "none";
+    galleryToggle.textContent = open
+      ? "Hide gallery preview"
+      : "Show gallery preview";
+  });
+}
+
+
+// ======================================
+// Scroll Reveal Animations
+// ======================================
 function initScrollReveal() {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   if (reduceMotion) return;
 
-  const targets = document.querySelectorAll(
+  const revealTargets = document.querySelectorAll(
     ".section, .block-card, .project-block, .two-column > div, .gallery-window"
   );
 
-  targets.forEach(el => el.classList.add("reveal"));
+  revealTargets.forEach((el) => el.classList.add("reveal"));
 
   if (!("IntersectionObserver" in window)) {
-    targets.forEach(el => el.classList.add("is-visible"));
+    revealTargets.forEach((el) => el.classList.add("is-visible"));
     return;
   }
 
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
 
-  targets.forEach(el => obs.observe(el));
+  revealTargets.forEach((el) => observer.observe(el));
 }
 
-/* ======================================
-   FLOATING NAV BAR – MOTION BASED ON SCROLL
-====================================== */
+
+// ======================================
+// Floating Bottom Nav – reacts to scroll direction
+// ======================================
 function initBottomNavScrollBehavior() {
-  let last = window.pageYOffset;
+  let lastY = window.pageYOffset;
 
   window.addEventListener("scroll", () => {
-    const current = window.pageYOffset;
+    const currentY = window.pageYOffset;
 
-    if (current > last) {
+    if (currentY > lastY) {
+      // scrolling down
       document.body.classList.add("scrolling-down");
       document.body.classList.remove("scrolling-up");
     } else {
+      // scrolling up
       document.body.classList.add("scrolling-up");
       document.body.classList.remove("scrolling-down");
     }
 
-    last = current;
+    lastY = currentY;
   });
 }
 
-/* ======================================
-   METRIC COUNTERS
-====================================== */
+
+// ======================================
+// Metric Counters (About Me section)
+// ======================================
 function setupMetricCounters() {
-  const nums = document.querySelectorAll(".metric-value");
-  if (!nums.length) return;
+  const metricValues = document.querySelectorAll(".metric-value");
+  if (!metricValues.length) return;
 
-  const obs = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-      const el = entry.target;
-      const target = parseInt(el.getAttribute("data-target"), 10) || 0;
-      const isMoney = el.textContent.trim().startsWith("$");
+        const el = entry.target;
+        const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+        const isMoney = el.textContent.trim().startsWith("$");
 
-      animateNumber(el, target, isMoney);
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.45 });
+        animateNumber(el, target, isMoney);
+        obs.unobserve(el);
+      });
+    },
+    { threshold: 0.4 }
+  );
 
-  nums.forEach(el => obs.observe(el));
+  metricValues.forEach((el) => observer.observe(el));
 }
 
+
+// Utility function for number animation
 function animateNumber(el, target, isMoney) {
   const duration = 800;
+  const start = 0;
   const startTime = performance.now();
 
   function frame(now) {
     const progress = Math.min((now - startTime) / duration, 1);
-    const value = Math.floor(target * progress);
+    const current = Math.floor(start + (target - start) * progress);
 
     el.textContent = isMoney
-      ? `$${value.toLocaleString()}`
-      : value.toLocaleString();
+      ? `$${current.toLocaleString()}`
+      : current.toLocaleString();
 
-    if (progress < 1) requestAnimationFrame(frame);
+    if (progress < 1) {
+      requestAnimationFrame(frame);
+    }
   }
 
   requestAnimationFrame(frame);
 }
 
-/* ======================================
-   BACK TO TOP BUTTON
-====================================== */
+
+// ======================================
+// Back to Top Button
+// ======================================
 function initBackToTop() {
   const btn = document.getElementById("back-to-top");
   if (!btn) return;
 
   window.addEventListener("scroll", () => {
-    btn.style.display = window.scrollY > 450 ? "block" : "none";
+    btn.style.display = window.scrollY > 400 ? "block" : "none";
   });
 
   btn.addEventListener("click", () => {

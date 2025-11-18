@@ -113,3 +113,113 @@ document.addEventListener("DOMContentLoaded", () => {
     lastY = currentY;
   });
 });
+
+// script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupMetricCounters();
+  setupScrollTape();
+});
+
+/* Metric counters in the About section */
+function setupMetricCounters() {
+  const metricValues = document.querySelectorAll(".metric-value");
+  if (!metricValues.length) return;
+
+  const options = {
+    threshold: 0.4
+  };
+
+  const onIntersect = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+      const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+
+      // If there is nothing to animate yet, just set the text and stop.
+      if (target === 0) {
+        el.textContent = el.textContent;
+        observer.unobserve(el);
+        return;
+      }
+
+      animateNumber(el, target);
+      observer.unobserve(el);
+    });
+  };
+
+  const observer = new IntersectionObserver(onIntersect, options);
+
+  metricValues.forEach((el) => observer.observe(el));
+}
+
+/* Utility to animate numbers */
+function animateNumber(el, target) {
+  const duration = 800;
+  const start = 0;
+  const startTime = performance.now();
+
+  const isMoney = el.textContent.trim().startsWith("$");
+
+  function frame(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const current = Math.floor(start + (target - start) * progress);
+
+    if (isMoney) {
+      el.textContent = `$${current.toLocaleString()}`;
+    } else {
+      el.textContent = current.toLocaleString();
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
+
+/* Scroll tape measure on the right side */
+function setupScrollTape() {
+  const tapeStrip = document.querySelector(".tape-strip");
+  const scrollValueEl = document.getElementById("scroll-mm-value");
+
+  if (!tapeStrip || !scrollValueEl) return;
+
+  const maxTapeHeight = 260; // maximum added height in px as you reach bottom
+  const baseTapeHeight = 30; // the initial visible length at the top
+  const maxMm = 3000; // how many millimeters at the very bottom
+
+  let ticking = false;
+
+  function updateTape() {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const scrollRange = docHeight - winHeight;
+
+    const ratio = scrollRange > 0 ? scrollTop / scrollRange : 0;
+    const clamped = Math.min(Math.max(ratio, 0), 1);
+
+    const tapeHeight = baseTapeHeight + maxTapeHeight * clamped;
+    tapeStrip.style.height = tapeHeight + "px";
+
+    const mm = Math.round(maxMm * clamped);
+    scrollValueEl.textContent = mm.toString();
+
+    ticking = false;
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateTape);
+      ticking = true;
+    }
+  }
+
+  updateTape(); // initial position
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("resize", onScroll);
+}
+

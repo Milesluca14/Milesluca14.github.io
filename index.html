@@ -28,7 +28,7 @@
 <body id="top" class="scrolling-up">
   <div class="page-wrapper">
 
-    <!-- HERO (full width) -->
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-inner">
         <div class="hero-text">
@@ -45,11 +45,6 @@
           <p class="hero-education-line">
             B.S. Mechanical Engineering · Class of 2029
           </p>
-
-          <div class="hero-buttons">
-            <a href="projects.html" class="btn primary">View projects</a>
-            <a href="resume.html" class="btn secondary">View resume</a>
-          </div>
         </div>
 
         <div class="hero-photo">
@@ -60,12 +55,32 @@
       </div>
     </header>
 
+    <!-- STATIC NAV BAR UNDER HERO -->
+    <nav class="mid-nav" aria-label="Primary site navigation">
+      <a href="index.html" class="mid-nav-item">Home</a>
+      <a href="projects.html" class="mid-nav-item">Projects</a>
+      <a href="gallery.html" class="mid-nav-item">Gallery</a>
+      <a href="resume.html" class="mid-nav-item">Resume</a>
+      <button id="theme-toggle" class="mid-nav-item" type="button">
+        Dark / Light
+      </button>
+      <a
+        href="https://www.linkedin.com/in/miles-lucatorto"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mid-nav-item linkedin-item">
+        LinkedIn
+      </a>
+    </nav>
+
     <!-- ABOUT (full width) -->
     <section class="section section-after-hero">
       <div class="section-inner">
         <h2>About me</h2>
         <p>
-          I am a Mechanical Engineering student at the University of Connecticut interested in design, manufacturing, and practical engineering. I like work that balances analysis with real builds, where the design has to fit, function, and be maintainable. I care about clear communication, clean CAD, and projects that teach something new every time.
+          I am a Mechanical Engineering student at the University of Connecticut interested in design, manufacturing, and practical engineering.
+          I like work that balances analysis with real builds, where the design has to fit, function, and be maintainable.
+          I care about clear communication, clean CAD, and projects that teach something new every time.
         </p>
       </div>
     </section>
@@ -289,16 +304,12 @@
 
   </div>
 
-  <!-- FLOATING BOTTOM NAV -->
-  <nav class="bottom-nav" aria-label="Site navigation">
+  <!-- FLOATING BOTTOM NAV (simplified) -->
+  <nav class="bottom-nav" aria-label="Quick navigation">
     <a href="index.html" class="bottom-nav-item">Home</a>
     <a href="projects.html" class="bottom-nav-item">Projects</a>
     <a href="gallery.html" class="bottom-nav-item">Gallery</a>
     <a href="resume.html" class="bottom-nav-item">Resume</a>
-    <button id="theme-toggle" class="bottom-nav-item bottom-nav-toggle" type="button">
-      Dark/Light
-    </button>
-    <a href="#top" class="bottom-nav-item">Top</a>
   </nav>
 
   <script src="script.js"></script>

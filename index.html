@@ -28,9 +28,13 @@
 <body id="top" class="scrolling-up">
   <div class="page-wrapper">
 
-    <!-- HERO -->
+
+    <!-- ====================================================== -->
+    <!-- HERO (Shortened, no buttons, image moved up slightly) -->
+    <!-- ====================================================== -->
     <header class="hero">
       <div class="hero-inner">
+
         <div class="hero-text">
           <h1 class="hero-title-main">Miles Lucatorto</h1>
 
@@ -52,17 +56,22 @@
             <img src="Untitled design (11).png" alt="Headshot of Miles Lucatorto" />
           </div>
         </div>
+
       </div>
     </header>
 
-    <!-- STATIC NAV BAR UNDER HERO -->
+
+
+    <!-- ====================================================== -->
+    <!-- STATIC MID-NAVIGATION BAR UNDER HERO -->
+    <!-- ====================================================== -->
     <nav class="mid-nav" aria-label="Primary site navigation">
       <a href="index.html" class="mid-nav-item">Home</a>
       <a href="projects.html" class="mid-nav-item">Projects</a>
       <a href="gallery.html" class="mid-nav-item">Gallery</a>
       <a href="resume.html" class="mid-nav-item">Resume</a>
 
-      <!-- Fixed dark/light button markup -->
+      <!-- Theme toggle -->
       <button id="theme-toggle" class="mid-nav-item theme-btn" type="button">
         Dark / Light
       </button>
@@ -77,7 +86,11 @@
       </a>
     </nav>
 
-    <!-- ABOUT (full width) -->
+
+
+    <!-- ====================================================== -->
+    <!-- ABOUT ME (Spaced evenly under mid-nav) -->
+    <!-- ====================================================== -->
     <section class="section section-after-hero">
       <div class="section-inner">
         <h2>About me</h2>
@@ -89,23 +102,261 @@
       </div>
     </section>
 
-    <!-- MAIN CONTENT REMAINS THE SAME -->
-    <!-- (Skills, Education, Contact, Involvement, Gallery, etc.) -->
-    <!-- Your entire existing content stays exactly as-is. -->
 
+
+    <!-- ====================================================== -->
+    <!-- MAIN GRID: LEFT + RIGHT COLUMNS (FULL RESTORED CONTENT) -->
+    <!-- ====================================================== -->
+    <section class="section">
+      <div class="section-inner main-grid">
+
+
+        <!-- ===================== LEFT COLUMN ===================== -->
+        <div class="grid-left">
+
+          <!-- SKILLS -->
+          <section class="block-card skills-block">
+            <h2>Skills</h2>
+            <ul>
+              <li>CAD: SolidWorks</li>
+              <li>CAD: Fusion 360</li>
+              <li>CAD: AutoCAD</li>
+              <li>Basic FEA and simulation exposure</li>
+              <li>3D printing and prototype fabrication</li>
+              <li>Basic machining and shop work</li>
+              <li>Mechanical assembly and testing</li>
+              <li>Measurement and tolerancing awareness</li>
+              <li>Excel and data organization</li>
+              <li>Documentation and report writing</li>
+              <li>Team collaboration on technical projects</li>
+              <li>Leadership through Scouting</li>
+            </ul>
+          </section>
+
+
+          <!-- EDUCATION -->
+          <section class="block-card education-block">
+            <h2>Education</h2>
+
+            <div class="school-entry">
+              <div class="school-logo-box">
+                <img src="Uconn.png" alt="UConn logo" />
+              </div>
+              <div>
+                <p class="school-name">University of Connecticut</p>
+                <p class="school-details">B.S. Mechanical Engineering · 2025 – 2029</p>
+              </div>
+            </div>
+
+            <div class="school-entry">
+              <div class="school-logo-box">
+                <img src="FPM.png" alt="Floral Park Memorial logo" />
+              </div>
+              <div>
+                <p class="school-name">Floral Park Memorial High School</p>
+                <p class="school-details">High School Diploma · 2019 – 2025</p>
+              </div>
+            </div>
+
+            <div class="school-entry">
+              <div class="school-logo-box">
+                <img src="SHS.png" alt="Sewanhaka logo" />
+              </div>
+              <div>
+                <p class="school-name">Sewanhaka High School · CTE</p>
+                <p class="school-details">Architectural Studies Program · 2022 – 2025</p>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- CONTACT -->
+          <section class="block-card contact-block">
+            <h2>Contact</h2>
+            <p>Email: Miles.lucatorto@gmail.com</p>
+
+            <div class="linkedin-badge-wrapper">
+              <p class="linkedin-badge-title">LinkedIn</p>
+
+              <!-- Light badge -->
+              <div class="linkedin-badge linkedin-badge-light">
+                <div
+                  class="badge-base LI-profile-badge"
+                  data-locale="en_US"
+                  data-size="medium"
+                  data-theme="light"
+                  data-type="HORIZONTAL"
+                  data-vanity="miles-lucatorto"
+                  data-version="v1">
+                  <a class="badge-base__link LI-simple-link"
+                     href="https://www.linkedin.com/in/miles-lucatorto?trk=profile-badge">
+                    Miles Lucatorto
+                  </a>
+                </div>
+              </div>
+
+              <!-- Dark badge -->
+              <div class="linkedin-badge linkedin-badge-dark">
+                <div
+                  class="badge-base LI-profile-badge"
+                  data-locale="en_US"
+                  data-size="medium"
+                  data-theme="dark"
+                  data-type="HORIZONTAL"
+                  data-vanity="miles-lucatorto"
+                  data-version="v1">
+                  <a class="badge-base__link LI-simple-link"
+                     href="https://www.linkedin.com/in/miles-lucatorto?trk=profile-badge">
+                    Miles Lucatorto
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <!-- ===================== RIGHT COLUMN ===================== -->
+        <div class="grid-right">
+
+          <!-- IN THE SHOP -->
+          <section class="block-card inshop-block">
+            <h2>Eagle Scout Project – Field Work</h2>
+            <div class="profile-photo-frame">
+              <img src="sexton_image.jpg"
+                   alt="Miles working on Eagle Scout project" />
+            </div>
+            <p class="profile-photo-caption">
+              Eagle Scout project with Mr. Sexton.
+            </p>
+          </section>
+
+
+          <!-- INVOLVEMENT -->
+          <section class="block-card involvement-block">
+            <h2>Involvement</h2>
+
+            <article class="mini-panel">
+              <h3>
+                Formula SAE
+                <span class="involvement-dates">2025 – Present</span>
+              </h3>
+              <p>
+                Work on the design and development of a student-built race car, contributing to CAD, packaging, and subsystem collaboration.
+              </p>
+              <p class="mini-panel-link">
+                <a href="sae.html">See more about Formula SAE →</a>
+              </p>
+            </article>
+
+            <article class="mini-panel">
+              <h3>
+                Boy Scouts of America
+                <span class="involvement-dates">2018 – Present</span>
+              </h3>
+              <p>
+                Senior Patrol Leader and Eagle Scout candidate in Troop 4, Floral Park, New York, responsible for planning, training, and leading scouts.
+              </p>
+              <p class="mini-panel-link">
+                <a href="scouting.html">See more about Boy Scouts of America →</a>
+              </p>
+            </article>
+
+            <article class="mini-panel">
+              <h3>
+                Robotics
+                <span class="involvement-dates">2022 – 2025</span>
+              </h3>
+              <p>
+                Experience with 4017 RoboPandas, contributing to fabrication, assembly, testing, and event support at competitions.
+              </p>
+              <p class="mini-panel-link">
+                <a href="robotics.html">See more about Robotics →</a>
+              </p>
+            </article>
+
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ====================================================== -->
+    <!-- GALLERY SECTION (FULL RESTORED) -->
+    <!-- ====================================================== -->
+    <section class="section">
+      <div class="section-inner">
+
+        <div class="gallery-header-row">
+          <h2>Gallery</h2>
+          <button id="gallery-toggle" class="btn tertiary" type="button">
+            Show gallery preview
+          </button>
+        </div>
+
+        <div id="gallery-preview" class="gallery-preview">
+          <div class="gallery-grid">
+
+            <figure class="gallery-item">
+              <div class="gallery-window">
+                <img src="lab_picture.PNG" alt="Laboratory work" />
+              </div>
+              <figcaption>Laboratory work</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <div class="gallery-window">
+                <img src="in_the_car.jpg" alt="UConn Formula SAE volunteer work" />
+              </div>
+              <figcaption>UConn Formula SAE volunteer work</figcaption>
+            </figure>
+
+            <figure class="gallery-item">
+              <div class="gallery-window">
+                <img src="in_the_shop.jpg" alt="Reverse engineering project" />
+              </div>
+              <figcaption>Reverse engineering project</figcaption>
+            </figure>
+
+          </div>
+
+          <p class="gallery-more-link">
+            <a href="gallery.html">View full gallery →</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ====================================================== -->
     <!-- FOOTER -->
+    <!-- ====================================================== -->
     <footer class="page-footer">
       <p>© 2025 Miles Lucatorto · Made by Miles Lucatorto</p>
     </footer>
 
-    <!-- SIMPLE BACK-TO-TOP ARROW BUTTON -->
-    <a href="#top" class="back-to-top" aria-label="Back to top">
-      ↑
-    </a>
+
+
+    <!-- ====================================================== -->
+    <!-- NEW BACK TO TOP ARROW -->
+    <!-- ====================================================== -->
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
 
   </div>
 
-  <!-- FLOATING BOTTOM NAV (simplified) -->
+
+
+  <!-- ====================================================== -->
+  <!-- FLOATING BOTTOM NAVIGATION -->
+  <!-- ====================================================== -->
   <nav class="bottom-nav" aria-label="Quick navigation">
     <a href="index.html" class="bottom-nav-item">Home</a>
     <a href="projects.html" class="bottom-nav-item">Projects</a>
@@ -113,6 +364,9 @@
     <a href="resume.html" class="bottom-nav-item">Resume</a>
   </nav>
 
+
+  <!-- JS FILE -->
   <script src="script.js"></script>
+
 </body>
 </html>
